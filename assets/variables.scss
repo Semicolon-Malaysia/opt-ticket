@@ -1,0 +1,16 @@
+// Ref: https://github.com/nuxt-community/vuetify-module#customvariables
+//
+// The variables you want to modify
+// $font-size-root: 20px;
+
+$body-font-family: "Poppins", sans-serif;
+$material-light: (
+  "background": #000000,
+  //   "background-image": linear-gradient(160deg, #0093e9 0%, #80d0c7 100%)
+);
+
+//Component variables
+$desktop-navbar-height: 0px;
+$mobile-appbar-height: 48px;
+
+@import "~vuetify/src/styles/styles.sass";

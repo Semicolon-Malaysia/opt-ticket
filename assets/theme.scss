@@ -1,0 +1,126 @@
+@import "./font.scss";
+
+body {
+  scroll-behavior: smooth;
+}
+
+p {
+  color: white;
+}
+
+.components__toasted {
+  font-family: "Poppins", sans-serif;
+}
+
+.inner-section {
+  @media (max-width: 600px) {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 24px;
+  }
+  //small
+  @media (max-width: 960px) {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  //medium
+  @media (max-width: 1264px) {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  //large and x-large
+  @media (min-width: 1265px) {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+.bg--gradient {
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+}
+
+.minimal-scroller {
+  &::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(#696969, 0.5);
+    border-radius: 25px;
+  }
+}
+
+.position {
+  &-absolute {
+    position: absolute !important;
+  }
+
+  &-relative {
+    position: relative !important;
+  }
+}
+
+.full {
+  &-width {
+    width: 100%;
+  }
+
+  &-height {
+    height: 100%;
+  }
+
+  &-size {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.center {
+  &-all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &-all-inline {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-evenly {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  &-around {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.title-divider {
+  height: 1px;
+  width: 100px;
+  border: none;
+  background: #194da3;
+  display: flex;
+  margin: 10px auto;
+}
