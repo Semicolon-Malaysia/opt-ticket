@@ -20,7 +20,7 @@ export const head: NuxtConfig["head"] = {
     {
       rel: "icon",
       type: "image/x-icon",
-      href: "/favicon.ico"
+      href: "/logo/opt-logo-black.svg"
     }
   ]
 };

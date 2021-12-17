@@ -1,6 +1,6 @@
 <template>
   <div class="components__layoutFooter">
-    <v-row>
+    <v-row class="inner-section mx-auto">
       <v-col cols="12" sm="6" class="d-flex align-center flex-column">
         <p>Organized by:</p>
         <img
@@ -21,7 +21,7 @@
           height="auto"
           contain
           alt="Atas Angin"
-          class="mb-3 d-flex ml-0"
+          class="mb-3 d-flex"
         />
       </v-col>
     </v-row>
@@ -151,8 +151,8 @@ export default class LayoutFooter extends Vue {
   padding: 36px 0 !important;
   width: 100vw;
   height: auto;
-  bottom: 0;
-  position: absolute;
+  // bottom: 0;
+  // position: absolute;
   background: black;
 
   .sitemap {

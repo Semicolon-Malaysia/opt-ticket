@@ -1,11 +1,9 @@
 <template>
   <div class="components__eventDetails">
-    <div class="mb-12 center-all flex-column">
+    <div class="inner-section pa-12 text-center">
       <p>DATE</p>
-      <p class="text-h6 font-weight-black">29 JANURAY 2022 (SATURDAY)</p>
-    </div>
+      <p class="text-h6 font-weight-black mb-12">29 JANUARY 2022 (SATURDAY)</p>
 
-    <div class="mb-4 center-all flex-column">
       <p>LOCATION</p>
 
       <p class="text-h6 font-weight-black mb-0">BSYNC PRODUCTION</p>
@@ -14,6 +12,28 @@
         Taman Persiaran Desa, <br />
         50460 Kuala Lumpur, <br />Wilayah Persekutuan Kuala Lumpur
       </p>
+
+      <p class="text-caption red--text">Get directions here:</p>
+
+      <v-btn
+        class="mr-2"
+        color="white"
+        fab
+        href="https://goo.gl/maps/JPjHTHUDfZxqvtKZ9"
+        target="/blank"
+      >
+        <v-icon large>mdi-google-maps</v-icon>
+      </v-btn>
+
+      <v-btn
+        class="ml-2"
+        color="white"
+        fab
+        href="https://goo.gl/maps/JPjHTHUDfZxqvtKZ9"
+        target="/blank"
+      >
+        <v-icon large>mdi-waze</v-icon>
+      </v-btn>
     </div>
   </div>
 </template>

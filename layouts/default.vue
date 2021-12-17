@@ -7,8 +7,8 @@
     <v-main>
       <body>
         <nuxt />
+        <layout-footer />
       </body>
-      <layout-footer />
     </v-main>
     <v-footer absolute app color="black">
       <span class="text-caption full-width text-center white--text">
