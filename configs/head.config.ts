@@ -7,7 +7,7 @@ export const head: NuxtConfig["head"] = {
   titleTemplate: (titleChunk: String) => {
     return titleChunk
       ? `${titleChunk} - ${process.env.APP_NAME}`
-      : `${process.env.APP_NAME} - IT Consulting Services` || "";
+      : `${process.env.APP_NAME} - One Plus Two Malaysia` || "";
   },
   meta: [
     ...createSEOMeta({

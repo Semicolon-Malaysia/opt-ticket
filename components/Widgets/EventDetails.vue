@@ -1,5 +1,5 @@
 <template>
-  <div class="components__eventDetails">
+  <div class="components__eventDetails my-12">
     <div class="inner-section pa-12 text-center">
       <p>DATE</p>
       <p class="text-h6 font-weight-black mb-12">29 JANUARY 2022 (SATURDAY)</p>

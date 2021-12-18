@@ -1,5 +1,5 @@
 <template>
-  <div class="components__eventbriteWidget">
+  <div class="components__eventbriteWidget pa-3">
     <noscript>
       <a
         href="https://www.eventbrite.com/e/test-opt-anniversary-party-tickets-229268236467"
@@ -10,17 +10,47 @@
     </noscript>
 
     <!-- You can customize this button any way you like -->
-    <v-btn
-      class="d-flex mx-auto mb-12"
-      width="200"
-      rounded
-      large
-      color="white"
-      id="ebBtn"
-      @click="initWidgetDebounce"
-      v-text="'Buy Tickets'"
-    >
-    </v-btn>
+    <div class="full-width center-all">
+      <v-fab-transition v-if="$vuetify.breakpoint.smAndDown">
+        <v-btn
+          fixed
+          :color="color"
+          class="center-all mb-3"
+          width="80%"
+          bottom
+          large
+          rounded
+          @click="initWidget"
+        >
+          <v-icon class="mr-3">mdi-ticket</v-icon>
+          Buy Tickets
+        </v-btn>
+      </v-fab-transition>
+
+      <v-fab-transition v-else>
+        <v-btn
+          :color="color"
+          class="ebBtn mb-6"
+          id="ebBtn"
+          :fab="!hover"
+          fixed
+          large
+          :rounded="hover"
+          bottom
+          right
+          @click="initWidget"
+          @mouseenter="onHover(1)"
+          @mouseleave="onHover(0)"
+        >
+          <v-icon :class="hover ? 'mr-3' : null">
+            mdi-ticket
+          </v-icon>
+          <span v-if="hover">
+            Buy Tickets
+          </span>
+        </v-btn>
+      </v-fab-transition>
+    </div>
   </div>
 </template>
 
@@ -47,7 +77,10 @@ export default class EventbriteWidget extends Vue {
   //   @Ref("ebBtn") ebBtn!: any;
 
   initWidgetDebounce = debounce(this.initWidget, 500);
+  loading: Boolean = false;
+  hover: Boolean = false;
 
+  color: String = "#E1AD01";
   widgetPayload: Object = {
     widgetType: "checkout",
     eventId: "229268236467",
@@ -56,22 +89,31 @@ export default class EventbriteWidget extends Vue {
     onOrderComplete: this.callback
   };
 
+  onHover(status: Number) {
+    if (status == 1) {
+      this.hover = true;
+      // this.color = "#E1AD01";
+    } else {
+      this.hover = false;
+      // this.color = "white";
+    }
+  }
   mounted() {
-    //   this.initWidgetDebounce();
-    debounce(() => {
-      console.log(EBWidgets);
-    }, 1000);
+    this.initWidgetDebounce();
   }
 
   async initWidget() {
+    this.loading = true;
     try {
       widget = await EBWidgets.createWidget(this.widgetPayload);
 
       if (widget) {
-        console.log(widget);
+        console.log("ebwidgets: " + widget);
       }
     } catch (error) {
       console.log(error);
+    } finally {
+      this.loading = false;
     }
   }
 
@@ -81,4 +123,10 @@ export default class EventbriteWidget extends Vue {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.components__eventbriteWidget {
+  .ebBtn {
+    border: #e1ad01 solid 3px !important;
+  }
+}
+</style>

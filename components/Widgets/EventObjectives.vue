@@ -1,10 +1,20 @@
 <template>
-  <div class="components__eventObjectives">
+  <div class="components__eventObjectives my-12">
     <div class="inner-section">
-      <p class="text-h4 text-center">WHAT WILL BE GOING ON?</p>
+      <p class="text-h4 my-12 text-center font-weight-black">
+        WHAT WILL BE GOING ON?
+      </p>
 
       <v-row>
-        <v-col cols="12" sm="6">
+        <v-col v-for="(item, index) in items" :key="index" cols="12" sm="6">
+          <card-hover :title="item.title">
+            <template slot="default">
+              <div class="center-all">
+                <v-img :src="item.img" width="auto" height="150" contain />
+              </div>
+            </template>
+          </card-hover>
+          <!-- 
           <v-card
             height="230px"
             class="pa-3 center-all"
@@ -16,7 +26,6 @@
               PRODUCT LAUNCHING
             </v-card-title>
 
-            <!-- <v-icon x-large>mdi-gift-open-outline</v-icon> -->
 
             <v-img
               src="/icons/gift-open-outline.svg"
@@ -25,55 +34,7 @@
               class="d-flex mx-auto"
               contain
             />
-          </v-card>
-        </v-col>
-
-        <v-col cols="12" sm="6">
-          <v-card class="pa-3" outlined rounded="lg" color="#ff2079">
-            <v-card-title class="pa-0 mb-2 center-all">
-              ANNIVERSARY CELEBRATION
-            </v-card-title>
-
-            <v-img
-              src="/icons/balloon.svg"
-              width="100"
-              height="auto"
-              class="d-flex mx-auto"
-              contain
-            />
-          </v-card>
-        </v-col>
-
-        <v-col cols="12" sm="6">
-          <v-card class="pa-3" outlined rounded="lg" color="#ff2079">
-            <v-card-title class="pa-0 mb-2 center-all">
-              LIVE PRINTING
-            </v-card-title>
-
-            <v-img
-              src="/icons/printer-3d-nozzle.svg"
-              width="100"
-              height="auto"
-              class="d-flex mx-auto"
-              contain
-            />
-          </v-card>
-        </v-col>
-
-        <v-col cols="12" sm="6">
-          <v-card class="pa-3" outlined rounded="lg" color="#ff2079">
-            <v-card-title class="pa-0 mb-2 center-all">
-              PRIVATE PARTY
-            </v-card-title>
-
-            <v-img
-              src="/icons/music.svg"
-              width="100"
-              height="auto"
-              class="d-flex mx-auto"
-              contain
-            />
-          </v-card>
+          </v-card> -->
         </v-col>
       </v-row>
     </div>
@@ -82,9 +43,33 @@
 
 <script lang="ts">
 import { Vue, Component } from "nuxt-property-decorator";
+import CardHover from "./CardHover.vue";
 
-@Component({})
-export default class EventObjectives extends Vue {}
+@Component({
+  components: {
+    CardHover
+  }
+})
+export default class EventObjectives extends Vue {
+  items: Array<Object> = [
+    {
+      title: "PRODUCT LAUNCHING",
+      img: "/icons/gift-open-outline.svg"
+    },
+    {
+      title: "ANNIVERSARY CELEBRATION",
+      img: "/icons/balloon.svg"
+    },
+    {
+      title: "LIVE PRINTING",
+      img: "/icons/printer-3d-nozzle.svg"
+    },
+    {
+      title: "PRIVATE PARTY",
+      img: "/icons/music.svg"
+    }
+  ];
+}
 </script>
 
 <style lang="scss" scoped></style>

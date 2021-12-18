@@ -2,8 +2,8 @@
   <div class="pages__index">
     <event-banner />
     <event-details />
-    <eventbrite-widget />
     <event-objectives />
+    <eventbrite-widget />
   </div>
 </template>
 

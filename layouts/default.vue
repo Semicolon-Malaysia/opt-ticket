@@ -7,7 +7,7 @@
     <v-main>
       <body>
         <nuxt />
-        <layout-footer />
+        <!-- <layout-footer /> -->
       </body>
     </v-main>
     <v-footer absolute app color="black">

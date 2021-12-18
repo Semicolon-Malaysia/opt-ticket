@@ -9,7 +9,7 @@
           height="auto"
           contain
           alt="Atas Angin"
-          class="mb-3 d-flex ml-0"
+          class="mb-3 d-flex ml-0 cursor-pointer"
         />
       </v-col>
 
@@ -21,7 +21,7 @@
           height="auto"
           contain
           alt="Atas Angin"
-          class="mb-3 d-flex"
+          class="mb-3 d-flex cursor-pointer"
         />
       </v-col>
     </v-row>
