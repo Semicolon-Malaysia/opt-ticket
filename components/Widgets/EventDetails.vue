@@ -1,5 +1,5 @@
 <template>
-  <div class="components__eventDetails my-0 my-sm-12">
+  <div class="components__eventDetails mt-6 my-sm-12">
     <div class="inner-section pa-0 pa-sm-12 text-center">
       <p class="text-sm-h5 error--text">DATE</p>
       <p class="text-h6 text-sm-h4 font-weight-black mb-sm-2">

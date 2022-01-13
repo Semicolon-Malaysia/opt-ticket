@@ -10,10 +10,7 @@
     <v-footer absolute app color="black">
       <span class="text-caption full-width text-center white--text">
         &copy;
-        {{
-          new Date().getFullYear() +
-            ` OPT Malaysia - Created by Semicolon Malaysia`
-        }}
+        {{ new Date().getFullYear() + ` - One Plus Two Malaysia` }}
       </span>
     </v-footer>
   </v-app>
