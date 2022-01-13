@@ -1,42 +1,27 @@
 <template>
   <div class="components__eventObjectives my-12">
     <div class="inner-section">
-      <p class="text-h4 my-12 text-center font-weight-black">
-        WHAT WILL BE GOING ON?
+      <p class="text-h5 mt-12 mb-6 error--text text-center font-weight-black">
+        RULES AND REGULATIONS
       </p>
 
-      <v-row>
-        <v-col v-for="(item, index) in items" :key="index" cols="12" sm="6">
-          <card-hover :title="item.title">
-            <template slot="default">
-              <div class="center-all">
-                <v-img :src="item.img" width="auto" height="150" contain />
-              </div>
-            </template>
-          </card-hover>
-          <!-- 
-          <v-card
-            height="230px"
-            class="pa-3 center-all"
-            outlined
-            rounded="lg"
-            color="none"
-          >
-            <v-card-title class="pa-0 mb-2 center-all">
-              PRODUCT LAUNCHING
-            </v-card-title>
-
-
-            <v-img
-              src="/icons/gift-open-outline.svg"
-              width="100"
-              height="auto"
-              class="d-flex mx-auto"
-              contain
-            />
-          </v-card> -->
-        </v-col>
-      </v-row>
+      <v-list
+        class="transparent white--text d-flex mx-auto flex-column"
+        max-width="500"
+      >
+        <v-list-item
+          class="white--text center-all"
+          v-for="(item, index) in items"
+          :key="index"
+        >
+          <v-list-item-icon>
+            <v-icon color="error" x-small>mdi-circle</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            {{ item.text }}
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
     </div>
   </div>
 </template>
@@ -53,20 +38,16 @@ import CardHover from "./CardHover.vue";
 export default class EventObjectives extends Vue {
   items: Array<Object> = [
     {
-      title: "PRODUCT LAUNCHING",
-      img: "/icons/gift-open-outline.svg"
+      text:
+        "All participants must be fully vaccinated and Digital Certificate must be presented via MySejahtera app."
     },
+    { text: "All participants must be above 18 years old." },
+    { text: "Strictly no drugs and alcohol throughout the event." },
+    { text: "No food and drinks are allowed in the event hall." },
+    { text: "Carpool or E-Hailing is preferred." },
     {
-      title: "ANNIVERSARY CELEBRATION",
-      img: "/icons/balloon.svg"
-    },
-    {
-      title: "LIVE PRINTING",
-      img: "/icons/printer-3d-nozzle.svg"
-    },
-    {
-      title: "PRIVATE PARTY",
-      img: "/icons/music.svg"
+      text:
+        "Covid test kit will be provided for all participants before the event."
     }
   ];
 }

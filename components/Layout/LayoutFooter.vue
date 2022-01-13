@@ -1,95 +1,42 @@
 <template>
-  <div class="components__layoutFooter">
-    <v-row class="inner-section mx-auto">
+  <div class="components__layoutFooter pb-12">
+    <v-row class="inner-section mx-auto ma-0" align="center">
       <v-col cols="12" sm="6" class="d-flex align-center flex-column">
-        <p>Organized by:</p>
-        <img
-          src="/logo/atas-angin-logo.jpg"
-          width="150"
-          height="auto"
-          contain
-          alt="Atas Angin"
-          class="mb-3 d-flex ml-0 cursor-pointer"
-        />
+        <p>Event Organizer</p>
+        <a
+          href="https://www.facebook.com/atasangin.ev/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="/logo/atas-angin-logo.jpg"
+            width="150"
+            height="auto"
+            contain
+            alt="Atas Angin"
+            class="center-all"
+          />
+        </a>
       </v-col>
 
       <v-col cols="12" sm="6" class="d-flex align-center flex-column">
-        <p>Tech by:</p>
-        <img
-          src="/logo/semicolon_light.svg"
-          width="250"
-          height="auto"
-          contain
-          alt="Atas Angin"
-          class="mb-3 d-flex cursor-pointer"
-        />
+        <p>Technology Partner</p>
+        <a
+          href="http://semicolon.com.my"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="/logo/semicolon_light.svg"
+            width="250"
+            height="auto"
+            contain
+            alt="Atas Angin"
+            class="center-all "
+          />
+        </a>
       </v-col>
     </v-row>
-    <!-- <v-row class="inner-section mx-auto">
-      <v-col cols="12" sm="3">
-        <img
-          src="/logo/semicolon_light.svg"
-          width="auto"
-          height="30"
-          contain
-          alt="Semicolon Malaysia"
-          class="mb-3 d-flex ml-0"
-        />
-
-        <v-card
-          flat
-          tile
-          color="transparent"
-          class="white--text d-flex flex-column"
-        >
-          <p class="text-body-1 mb-0">Semicolon Malaysia Ent.</p>
-          <p class="text-caption accent--text">202103247429 (003309851-P)</p>
-          <div class="d-inline-flex align-center mb-2">
-            <v-icon color="#def6fe" class="mr-2">mdi-email</v-icon>
-            <a
-              href="mailto:hello@semicolon.com.my"
-              class="text-decoration-none white--text text-body-2"
-            >
-              hello@semicolon.com.my
-            </a>
-          </div>
-
-          <div class="d-inline-flex align-center">
-            <v-icon color="#def6fe" class="mr-2">mdi-phone</v-icon>
-            <a
-              href="tel:+601111283226"
-              class="text-decoration-none white--text text-body-2"
-            >
-              +60 11 - 1128 3226
-            </a>
-          </div>
-        </v-card>
-      </v-col>
-
-      <v-spacer />
-
-      <v-col cols="12" sm="2">
-        <p class="text-body-1 accent--text mb-0">
-          {{ $t("label.sitemap") }}
-        </p>
-        <div class="sitemap">
-          <a
-            v-for="(item, index) in sitemap"
-            :key="index"
-            :href="item.to"
-            class="clear-link-format font-weight-light"
-          >
-            {{ item.title }}
-          </a>
-        </div>
-      </v-col>
-      <v-col cols="12" sm="3">
-        <p class="text-body-1 accent--text">
-          {{ $t("label.shareOnSocialMedia") }}
-        </p>
-        <social-share />
-      </v-col>
-    </v-row> -->
   </div>
 </template>
 
@@ -148,7 +95,6 @@ export default class LayoutFooter extends Vue {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 36px 0 !important;
   width: 100vw;
   height: auto;
   // bottom: 0;

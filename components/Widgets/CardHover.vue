@@ -25,7 +25,7 @@ export default class CardHover extends Vue {
 
   onHover(status: Number) {
     if (status == 1) {
-      this.color = "pink";
+      this.color = "#E1AD01";
     } else {
       this.color = "white";
     }

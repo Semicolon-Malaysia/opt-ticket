@@ -1,48 +1,65 @@
 <template>
-  <div class="components__eventBanner">
-    <div class="inner-section">
-      <img alt="logo" class="opt-logo" src="/logo/opt-logo-white.svg" />
-      <p
-        class="white--text text-h5 text-md-h4 text-center text-uppercase font-weight-bold"
-      >
-        Anniversary Party
-      </p>
+  <div
+    class="components__eventBanner"
+    :class="$vuetify.breakpoint.smAndUp ? 'center-all' : null"
+  >
+    <v-row class="inner-section ma-0" align-content="center">
+      <v-col cols="12" sm="6" class="center-all">
+        <v-img
+          src="/images/finalposter.jpg"
+          :width="$vuetify.breakpoint.xsOnly ? '80%' : '100%'"
+          height="auto"
+          contain
+          class="center-all mb-4 mb-sm-0"
+        />
+      </v-col>
 
-      <p class="text-h6 text-md-h5 text-center mt-12">
-        JOIN US IN CELEBRATING OPT'S <br />
-        4TH YEAR ANNIVERSARY
-      </p>
+      <v-col cols="12" sm="6" class="center-all flex-column">
+        <img alt="logo" class="opt-logo" src="/logo/opt-logo-white.svg" />
+        <p
+          class="white--text text-h6 text-md-h5 text-center text-uppercase font-weight-bold"
+        >
+          Anniversary Party
+        </p>
+        <p class="text-h6 text-md-h5 text-center mt-12">
+          JOIN US IN CELEBRATING OPT'S <br />
+          4TH YEAR ANNIVERSARY
+        </p>
 
-      <v-btn icon x-large color="white" class="d-flex mx-auto">
-        <v-icon x-large>mdi-chevron-down</v-icon>
-      </v-btn>
-    </div>
+        <button-ticket />
+      </v-col>
+    </v-row>
   </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from "nuxt-property-decorator";
+import ButtonTicket from "./ButtonTicket.vue";
 
-@Component({})
+@Component({
+  components: {
+    ButtonTicket
+  }
+})
 export default class EventBanner extends Vue {}
 </script>
 
 <style lang="scss" scoped>
 .components__eventBanner {
+  @media screen and(min-width: 601px) and (max-width: 960px) {
+    height: 70vh;
+  }
   height: 100vh;
-  background: url("/images/banner.jpg") rgba(0, 0, 0, 0.42);
-  background-size: cover;
-  background-blend-mode: multiply;
-  background-repeat: no-repeat;
-  background-position: center center;
+  width: 100vw;
+  // background: url("/images/finalposter.jpg") rgba(0, 0, 0, 0.62);Ks
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // flex-direction: column;
 
   .opt-logo {
-    max-width: 500px;
+    width: 250px;
     height: auto;
     object-fit: contain;
   }

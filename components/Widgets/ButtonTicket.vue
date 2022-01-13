@@ -1,5 +1,5 @@
 <template>
-  <div class="components__eventbriteWidget pa-3">
+  <div class="components__buttonTicket">
     <noscript>
       <a
         href="https://www.eventbrite.com/e/opt-anniversary-party-tickets-245688229107"
@@ -9,49 +9,21 @@
       </a>
     </noscript>
 
-    <!-- You can customize this button any way you like -->
-    <div class="full-width center-all">
-      <v-fab-transition v-if="$vuetify.breakpoint.smAndDown">
-        <v-btn
-          fixed
-          :color="color"
-          class="center-all mb-3"
-          id="ebBtn"
-          width="80%"
-          bottom
-          large
-          rounded
-          @click="initWidget"
-        >
-          <v-icon class="mr-3">mdi-ticket</v-icon>
-          Buy Tickets
-        </v-btn>
-      </v-fab-transition>
-
-      <v-fab-transition v-else>
-        <v-btn
-          :color="color"
-          class="ebBtn mb-6"
-          id="ebBtn"
-          :fab="!hover"
-          fixed
-          large
-          :rounded="hover"
-          bottom
-          right
-          @click="initWidget"
-          @mouseenter="onHover(1)"
-          @mouseleave="onHover(0)"
-        >
-          <v-icon :class="hover ? 'mr-3' : null">
-            mdi-ticket
-          </v-icon>
-          <span v-if="hover">
-            Buy Tickets
-          </span>
-        </v-btn>
-      </v-fab-transition>
-    </div>
+    <v-btn
+      color="error"
+      class="center-all mb-3"
+      width="300"
+      bottom
+      id="ebBtn2"
+      :loading="loading"
+      x-large
+      rounded
+      @click="initWidget"
+    >
+      <span class="font-weight-black">
+        Buy Tickets
+      </span>
+    </v-btn>
   </div>
 </template>
 
@@ -74,7 +46,7 @@ let widget: any;
     };
   }
 })
-export default class EventbriteWidget extends Vue {
+export default class ButtonTicket extends Vue {
   initWidgetDebounce = debounce(this.initWidget, 500);
   loading: Boolean = false;
   hover: Boolean = false;
@@ -84,21 +56,12 @@ export default class EventbriteWidget extends Vue {
     widgetType: "checkout",
     eventId: "245688229107",
     modal: true,
-    modalTriggerElementId: "ebBtn",
+    modalTriggerElementId: "ebBtn2",
     iframeContainerId: "eventbrite-widget-container-245688229107",
     iframeContainerHeight: 425, // Widget height in pixels. Defaults to a minimum of 425px if not provided
     onOrderComplete: this.callback
   };
 
-  onHover(status: Number) {
-    if (status == 1) {
-      this.hover = true;
-      // this.color = "#E1AD01";
-    } else {
-      this.hover = false;
-      // this.color = "white";
-    }
-  }
   mounted() {
     this.initWidgetDebounce();
   }
