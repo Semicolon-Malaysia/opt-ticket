@@ -13,7 +13,8 @@ export const head: NuxtConfig["head"] = {
     ...createSEOMeta({
       title: "OPT Anniversary Party",
       description: "Join OPT in celebrating our 4th year anniversary.",
-      image: "/images/finalposter.jpg" || ""
+      image: "/images/finalposter-1.jpg" || "",
+      url: "https://event.oneplustwo.my"
     })
   ],
   link: [

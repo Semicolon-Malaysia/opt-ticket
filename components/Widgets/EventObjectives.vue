@@ -1,28 +1,26 @@
 <template>
-  <div class="components__eventObjectives my-12">
-    <div class="inner-section">
-      <p class="text-h5 mt-12 mb-6 error--text text-center font-weight-black">
-        RULES AND REGULATIONS
-      </p>
+  <div class="components__eventObjectives inner-section">
+    <p class="text-h5 error--text text-center font-weight-black">
+      RULES AND REGULATIONS
+    </p>
 
-      <v-list
-        class="transparent white--text d-flex mx-auto flex-column"
-        max-width="500"
+    <v-list
+      class="transparent white--text d-flex mx-auto flex-column"
+      max-width="500"
+    >
+      <v-list-item
+        class="white--text center-all"
+        v-for="(item, index) in items"
+        :key="index"
       >
-        <v-list-item
-          class="white--text center-all"
-          v-for="(item, index) in items"
-          :key="index"
-        >
-          <v-list-item-icon>
-            <v-icon color="error" x-small>mdi-circle</v-icon>
-          </v-list-item-icon>
-          <v-list-item-content>
-            {{ item.text }}
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </div>
+        <v-list-item-icon>
+          <v-icon color="error" x-small>mdi-circle</v-icon>
+        </v-list-item-icon>
+        <v-list-item-content>
+          {{ item.text }}
+        </v-list-item-content>
+      </v-list-item>
+    </v-list>
   </div>
 </template>
 

@@ -13,7 +13,6 @@
       color="error"
       class="center-all mb-3"
       width="300"
-      bottom
       id="ebBtn2"
       :loading="loading"
       x-large
@@ -82,11 +81,3 @@ export default class ButtonTicket extends Vue {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.components__eventbriteWidget {
-  .ebBtn {
-    border: #e1ad01 solid 3px !important;
-  }
-}
-</style>

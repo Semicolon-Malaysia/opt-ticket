@@ -1,7 +1,7 @@
 <template>
   <div class="components__layoutFooter pb-12">
-    <v-row class="inner-section mx-auto ma-0" align="center">
-      <v-col cols="12" sm="6" class="d-flex align-center flex-column">
+    <v-row class="inner-section mx-auto ma-0" align="center" justify="center">
+      <v-col cols="12" sm="6" md="4" class="d-flex align-center flex-column">
         <p>Event Organizer</p>
         <a
           href="https://www.facebook.com/atasangin.ev/"
@@ -19,7 +19,7 @@
         </a>
       </v-col>
 
-      <v-col cols="12" sm="6" class="d-flex align-center flex-column">
+      <v-col cols="12" sm="6" md="4" class="d-flex align-center flex-column">
         <p>Technology Partner</p>
         <a
           href="http://semicolon.com.my"
@@ -28,6 +28,24 @@
         >
           <img
             src="/logo/semicolon_light.svg"
+            width="250"
+            height="auto"
+            contain
+            alt="Atas Angin"
+            class="center-all "
+          />
+        </a>
+      </v-col>
+
+      <v-col cols="12" sm="6" md="4" class="d-flex align-center flex-column">
+        <p>Media Partner</p>
+        <a
+          href="https://www.instagram.com/masamag.my"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="/logo/masa-logo.svg"
             width="250"
             height="auto"
             contain

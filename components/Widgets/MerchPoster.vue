@@ -1,5 +1,5 @@
 <template>
-  <div class="components__merchPoster">
+  <div class="components__merchPoster inner-section">
     <v-img
       src="/images/merch.jpg"
       :width="$vuetify.breakpoint.xsOnly ? '80%' : '500'"
@@ -23,6 +23,6 @@ export default class MerchPoster extends Vue {}
 
 <style lang="scss" scoped>
 .components__merchPoster {
-  margin-bottom: 70px;
+  // margin-bottom: 70px;
 }
 </style>
