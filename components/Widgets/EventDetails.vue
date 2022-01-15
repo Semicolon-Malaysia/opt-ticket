@@ -32,7 +32,7 @@
         class="ml-2"
         color="white"
         fab
-        href="https://goo.gl/maps/JPjHTHUDfZxqvtKZ9"
+        href="https://waze.com/ul/hw283cbtzw"
         target="/blank"
       >
         <v-icon large>mdi-waze</v-icon>

@@ -28,7 +28,7 @@ export default class ArtistLineup extends Vue {
     "Force Park Bois ",
     "Chronicalz ",
     "53STU ",
-    "Ilyas Konlay ",
+    "Ilyas Konlay feat. Lucid Rari ",
     "Afikuraji ",
     "MB Nikz ",
     "DC Willie"
