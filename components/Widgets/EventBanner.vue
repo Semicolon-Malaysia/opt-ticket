@@ -6,7 +6,7 @@
     <v-row class="inner-section ma-0" align-content="center">
       <v-col cols="12" sm="6" class="center-all">
         <v-img
-          src="/images/finalposter.jpg"
+          src="/images/finalposter-1.jpg"
           :width="$vuetify.breakpoint.xsOnly ? '80%' : '100%'"
           height="auto"
           contain
@@ -51,12 +51,6 @@ export default class EventBanner extends Vue {}
   }
   height: 100vh;
   width: 100vw;
-  // background: url("/images/finalposter.jpg") rgba(0, 0, 0, 0.62);Ks
-
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  // flex-direction: column;
 
   .opt-logo {
     width: 250px;

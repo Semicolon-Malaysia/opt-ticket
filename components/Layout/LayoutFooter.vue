@@ -9,7 +9,7 @@
           rel="noopener noreferrer"
         >
           <img
-            src="/logo/atas-angin-logo.jpg"
+            src="/logo/atas-angin.svg"
             width="150"
             height="auto"
             contain
