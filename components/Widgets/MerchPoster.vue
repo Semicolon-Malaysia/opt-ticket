@@ -1,7 +1,7 @@
 <template>
   <div class="components__merchPoster inner-section">
     <v-img
-      src="/images/merch.jpg"
+      src="/images/merch-1.JPEG"
       :width="$vuetify.breakpoint.xsOnly ? '80%' : '500'"
       height="auto"
       contain
@@ -20,9 +20,3 @@ import { Vue, Component } from "nuxt-property-decorator";
 @Component({})
 export default class MerchPoster extends Vue {}
 </script>
-
-<style lang="scss" scoped>
-.components__merchPoster {
-  // margin-bottom: 70px;
-}
-</style>
