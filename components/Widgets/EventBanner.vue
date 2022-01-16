@@ -2,7 +2,7 @@
   <div class="components__eventBanner center-all">
     <div class="blur full-size">
       <div class="inner-section content center-all flex-column">
-        <img class="banner-img" src="/images/finalposter-1.jpg" />
+        <img class="banner-img" src="/images/finalposter-2.jpg" />
         <button-ticket />
       </div>
     </div>
