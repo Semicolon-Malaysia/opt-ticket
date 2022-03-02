@@ -2,28 +2,21 @@
   <div class="pages__index">
     <event-banner />
     <event-details />
-    <!-- <artist-lineup /> -->
     <merch-poster />
-    <event-objectives />
-    <!-- <eventbrite-widget /> -->
   </div>
 </template>
 
 <script lang="ts">
+import { debounce } from "lodash";
 import { Vue, Component } from "nuxt-property-decorator";
-// import ArtistLineup from "~/components/Widgets/ArtistLineup.vue";
 import EventBanner from "~/components/Widgets/EventBanner.vue";
-import EventbriteWidget from "~/components/Widgets/EventbriteWidget.vue";
 import EventDetails from "~/components/Widgets/EventDetails.vue";
-import EventObjectives from "~/components/Widgets/EventObjectives.vue";
 import MerchPoster from "~/components/Widgets/MerchPoster.vue";
 
 @Component({
   components: {
     EventBanner,
     EventDetails,
-    EventObjectives,
-    EventbriteWidget,
     MerchPoster
   },
   head() {
@@ -32,5 +25,20 @@ import MerchPoster from "~/components/Widgets/MerchPoster.vue";
     };
   }
 })
-export default class PageIndex extends Vue {}
+export default class PageIndex extends Vue {
+  mounted() {
+    this.$ga.enable();
+    debounce(this.startAnalytics, 500);
+  }
+
+  async startAnalytics() {
+    try {
+      let i = await this.$ga.onAnalyticsReady();
+      console.log(i);
+      this.$ga.page(this.$route.name as string);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+}
 </script>

@@ -1,7 +1,7 @@
 import { NuxtConfig } from "@nuxt/types";
 
 export const googleAnalytics: NuxtConfig["googleAnalytics"] = {
-  id: process.env.GOOGLE_ANALYTICS_ID || "",
+  id: "UA-215645516-1",
   autoTracking: {
     screenview: true,
     page: true,
