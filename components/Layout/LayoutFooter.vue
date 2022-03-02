@@ -9,7 +9,7 @@
           rel="noopener noreferrer"
         >
           <img
-            src="/logo/atas-angin.svg"
+            src="/logo/atasangin-black.svg"
             width="150"
             height="auto"
             contain
@@ -27,7 +27,7 @@
           rel="noopener noreferrer"
         >
           <img
-            src="/logo/semicolon_light.svg"
+            src="/logo/semicolon_dark.svg"
             width="250"
             height="auto"
             contain
@@ -117,7 +117,7 @@ export default class LayoutFooter extends Vue {
   height: auto;
   // bottom: 0;
   // position: absolute;
-  background: black;
+  background: #eeeeee;
 
   .sitemap {
     display: flex;

@@ -2,7 +2,7 @@
   <div class="components__buttonTicket">
     <noscript>
       <a
-        href="https://www.eventbrite.com/e/opt-anniversary-party-tickets-245688229107"
+        href="https://www.eventbrite.sg/e/svg-x-opt-against-the-world-tickets-289131759877"
         rel="noopener noreferrer"
         target="_blank"
         >Buy Tickets on Eventbrite
@@ -10,13 +10,13 @@
     </noscript>
 
     <v-btn
-      color="error"
-      class="center-all mb-3"
+      outlined
+      class="center-all mb-3 black--text"
       width="300"
       id="ebBtn2"
       :loading="loading"
       x-large
-      rounded
+      tile
       @click="initWidget"
     >
       <span class="font-weight-black">
@@ -49,26 +49,28 @@ export default class ButtonTicket extends Vue {
   initWidgetDebounce = debounce(this.initWidget, 500);
   loading: Boolean = false;
   hover: Boolean = false;
+  isWidgetReady: boolean = false;
 
   color: String = "#E1AD01";
   widgetPayload: Object = {
     widgetType: "checkout",
-    eventId: "245688229107",
+    eventId: "289131759877",
     modal: true,
     modalTriggerElementId: "ebBtn2",
-    iframeContainerId: "eventbrite-widget-container-245688229107",
+    iframeContainerId: "eventbrite-widget-container-289131759877",
     iframeContainerHeight: 425, // Widget height in pixels. Defaults to a minimum of 425px if not provided
     onOrderComplete: this.callback
   };
 
-  mounted() {
-    this.initWidgetDebounce();
-  }
-
   async initWidget() {
     this.loading = true;
     try {
-      widget = await EBWidgets.createWidget(this.widgetPayload);
+      if (!this.isWidgetReady) {
+        await EBWidgets.createWidget(this.widgetPayload);
+        this.isWidgetReady = true;
+      } else {
+        (this.widgetPayload as any).modal = true;
+      }
     } catch (error) {
       console.log(error);
     } finally {

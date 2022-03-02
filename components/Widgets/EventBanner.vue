@@ -1,21 +1,22 @@
 <template>
-  <div class="components__eventBanner center-all">
-    <div class="blur full-size">
-      <div class="inner-section content center-all flex-column">
-        <img class="banner-img" src="/images/finalposter-1.jpg" />
-        <button-ticket />
-      </div>
+  <div class="components__eventBanner center-all flex-column">
+    <div class="inner-section content center-all flex-column">
+      <img class="banner-img" src="/images/poster_1.jpg" />
+      <button-ticket />
     </div>
+    <!-- <sponsor-card v-if="$vuetify.breakpoint.smAndDown" /> -->
   </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from "nuxt-property-decorator";
 import ButtonTicket from "./ButtonTicket.vue";
+import SponsorCard from "./SponsorCard.vue";
 
 @Component({
   components: {
-    ButtonTicket
+    ButtonTicket,
+    SponsorCard
   }
 })
 export default class EventBanner extends Vue {}
@@ -23,17 +24,17 @@ export default class EventBanner extends Vue {}
 
 <style lang="scss" scoped>
 .components__eventBanner {
-  background: url("/images/finalposter-1.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   width: 100vw;
   height: 100vh;
+
+  .black_container {
+    background-color: #131313;
+  }
 
   .banner-img {
     object-fit: contain;
     max-height: 70vh;
-    max-width: 400px;
+    max-width: 700px;
     margin-bottom: 24px;
 
     @media screen and(max-width: 600px) and (max-width: 960px) {

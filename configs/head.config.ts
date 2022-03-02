@@ -7,13 +7,14 @@ export const head: NuxtConfig["head"] = {
   titleTemplate: (titleChunk: String) => {
     return titleChunk
       ? `${titleChunk} - ${process.env.APP_NAME}`
-      : `${process.env.APP_NAME} - One Plus Two Malaysia` || "";
+      : `${process.env.APP_NAME}` || "";
   },
   meta: [
     ...createSEOMeta({
-      title: "OPT Anniversary Party",
-      description: "Join OPT in celebrating our 4th year anniversary.",
-      image: "/images/finalposter-1.jpg" || "",
+      title: "SVG X OPT - Against The World",
+      description:
+        "Limited to 400 tickets only. Price starts at RM49. See you there!",
+      image: "/images/poster_1.jpg" || "",
       url: "https://event.oneplustwo.my"
     })
   ],
@@ -21,7 +22,7 @@ export const head: NuxtConfig["head"] = {
     {
       rel: "icon",
       type: "image/x-icon",
-      href: "/logo/opt-logo-black.svg"
+      href: "/favicon.svg"
     }
   ]
 };
