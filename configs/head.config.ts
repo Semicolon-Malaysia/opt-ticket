@@ -6,8 +6,8 @@ require("dotenv").config();
 export const head: NuxtConfig["head"] = {
   titleTemplate: (titleChunk: String) => {
     return titleChunk
-      ? `${titleChunk} - ${process.env.APP_NAME}`
-      : `${process.env.APP_NAME}` || "";
+      ? `${titleChunk} - SVG X OPT - Against The World`
+      : `SVG X OPT - Against The World`;
   },
   meta: [
     ...createSEOMeta({
