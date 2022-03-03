@@ -1,58 +1,42 @@
 <template>
   <div class="components__layoutFooter pb-12">
-    <v-row class="inner-section mx-auto ma-0" align="center" justify="center">
+    <v-row class="inner-section mx-auto ma-0" align="end" justify="center">
       <v-col cols="12" sm="6" md="4" class="d-flex align-center flex-column">
-        <p>Event Organizer</p>
         <a
           href="https://www.facebook.com/atasangin.ev/"
           target="_blank"
           rel="noopener noreferrer"
+          @click="goToLink('atasangin_fb')"
         >
           <img
             src="/logo/atasangin-black.svg"
-            width="150"
+            width="200"
             height="auto"
             contain
             alt="Atas Angin"
             class="center-all"
           />
         </a>
+        <p class="mt-5">Event Organizer</p>
       </v-col>
 
       <v-col cols="12" sm="6" md="4" class="d-flex align-center flex-column">
-        <p>Technology Partner</p>
         <a
           href="http://semicolon.com.my"
           target="_blank"
           rel="noopener noreferrer"
+          @click="goToLink('semicolon_web')"
         >
           <img
             src="/logo/semicolon_dark.svg"
-            width="250"
+            width="300"
             height="auto"
             contain
             alt="Atas Angin"
             class="center-all "
           />
         </a>
-      </v-col>
-
-      <v-col cols="12" sm="6" md="4" class="d-flex align-center flex-column">
-        <p>Media Partner</p>
-        <a
-          href="https://www.instagram.com/masamag.my"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="/logo/masa-logo.svg"
-            width="250"
-            height="auto"
-            contain
-            alt="Atas Angin"
-            class="center-all "
-          />
-        </a>
+        <p class="mt-5">Technology Partner</p>
       </v-col>
     </v-row>
   </div>
@@ -104,6 +88,13 @@ export default class LayoutFooter extends Vue {
         type: "button"
       }
     ];
+  }
+
+  goToLink(name: string) {
+    this.$gtag.event(`open_${name}`, {
+      event_category: "view",
+      event_label: `view_${name}`
+    });
   }
 }
 </script>

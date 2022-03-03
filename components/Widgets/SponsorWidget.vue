@@ -8,7 +8,7 @@
         width="150px"
         alt="badzille"
         contain
-        @click="goToLink('https://www.instagram.com/badzillecrunch.hq/')"
+        @click="goToLink('badzille')"
       />
 
       <p class="text-caption">Powered By</p>
@@ -18,7 +18,7 @@
         width="150px"
         alt="votafogo"
         contain
-        @click="goToLink('https://www.instagram.com/fcvotafogo/')"
+        @click="goToLink('votafogo')"
       />
     </div>
   </div>
@@ -31,8 +31,24 @@ import { Vue, Component, Ref } from "nuxt-property-decorator";
 export default class SponsorWidget extends Vue {
   hover: Boolean = false;
 
-  goToLink(url: string) {
-    window.open(url, "_blank");
+  goToLink(name: string) {
+    this.trackEvent(name);
+    if (name == "badzille") {
+      window.open("https://www.instagram.com/badzillecrunch.hq/", "_blank");
+      this.$gtag.linker({
+        domains: ["https://www.instagram.com/badzillecrunch.hq/"]
+      });
+    } else if (name == "votafogo") {
+      window.open("https://www.instagram.com/fcvotafogo/", "_blank");
+      this.$gtag.linker({ domains: ["https://www.instagram.com/fcvotafogo/"] });
+    }
+  }
+
+  trackEvent(name: String) {
+    this.$gtag.event(`open_${name}_ig`, {
+      event_category: "view",
+      event_label: `view_${name}`
+    });
   }
 }
 </script>

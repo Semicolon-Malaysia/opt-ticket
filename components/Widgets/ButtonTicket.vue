@@ -29,6 +29,7 @@
 <script lang="ts">
 import { debounce } from "lodash";
 import { Vue, Component, Ref } from "nuxt-property-decorator";
+import { GtagTime } from "vue-gtag";
 
 declare let EBWidgets: any;
 let widget: any;
@@ -65,6 +66,7 @@ export default class ButtonTicket extends Vue {
   async initWidget() {
     this.loading = true;
     try {
+      this.trackEvent();
       if (!this.isWidgetReady) {
         await EBWidgets.createWidget(this.widgetPayload);
         this.isWidgetReady = true;
@@ -78,8 +80,18 @@ export default class ButtonTicket extends Vue {
     }
   }
 
+  trackEvent() {
+    this.$gtag.event("initWidget", {
+      event_category: "view",
+      event_label: "view_eventbrite"
+    });
+  }
+
   callback() {
-    console.log("Order completed!");
+    this.$gtag.event("complete_purchase", {
+      event_category: "purchase",
+      event_label: "complete_purchase"
+    });
   }
 }
 </script>
