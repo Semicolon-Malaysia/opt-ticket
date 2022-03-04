@@ -1,7 +1,7 @@
 <template>
   <div class="components__eventBanner center-all flex-column">
     <div class="inner-section content center-all flex-column">
-      <img class="banner-img" src="/images/poster_1.jpg" />
+      <img class="banner-img" :src="imageSrc" />
       <button-ticket />
     </div>
     <!-- <sponsor-card v-if="$vuetify.breakpoint.smAndDown" /> -->
@@ -19,7 +19,15 @@ import SponsorCard from "./SponsorCard.vue";
     SponsorCard
   }
 })
-export default class EventBanner extends Vue {}
+export default class EventBanner extends Vue {
+  get imageSrc() {
+    if (this.$vuetify.breakpoint.smAndDown) {
+      return "/images/poster-mobile.jpg";
+    } else {
+      return "/images/poster-web.jpg";
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -34,7 +42,7 @@ export default class EventBanner extends Vue {}
   .banner-img {
     object-fit: contain;
     max-height: 70vh;
-    max-width: 700px;
+    max-width: 900px;
     margin-bottom: 24px;
 
     @media screen and(max-width: 600px) and (max-width: 960px) {

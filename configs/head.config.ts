@@ -5,16 +5,14 @@ require("dotenv").config();
 
 export const head: NuxtConfig["head"] = {
   titleTemplate: (titleChunk: String) => {
-    return titleChunk
-      ? `${titleChunk} - SVG X OPT - Against The World`
-      : `SVG X OPT - Against The World`;
+    return `SVG X OPT - Against The World`;
   },
   meta: [
     ...createSEOMeta({
       title: "SVG X OPT - Against The World",
       description:
         "Limited to 400 tickets only. Price starts at RM49. See you there!",
-      image: "/images/poster_1.jpg" || "",
+      image: "/images/poster-web.jpg" || "",
       url: "https://event.oneplustwo.my"
     })
   ],

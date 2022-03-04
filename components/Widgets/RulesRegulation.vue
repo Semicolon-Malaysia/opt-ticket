@@ -17,9 +17,9 @@
         <v-list-item-icon class="d-flex my-auto">
           <v-icon color="black" x-small>mdi-circle</v-icon>
         </v-list-item-icon>
-        Participants are required to conduct a Covid19 self-test prior to
-        attending the event. The test result are required to be presented during
-        check-in.
+        Participants must conduct a Covid 19 self-test at home prior to
+        attending the event. You are required to present your test result during
+        check-in as proof. If you fail to comply, your entrance will be denied.
       </v-list-item>
 
       <v-list-item>
@@ -27,6 +27,20 @@
           <v-icon color="black" x-small>mdi-circle</v-icon>
         </v-list-item-icon>
         Strictly no drugs and alcohol are allowed throughout the event.
+      </v-list-item>
+
+      <v-list-item>
+        <v-list-item-icon class="d-flex my-auto">
+          <v-icon color="black" x-small>mdi-circle</v-icon>
+        </v-list-item-icon>
+        No outside food and beverages are allowed in the event area.
+      </v-list-item>
+
+      <v-list-item>
+        <v-list-item-icon class="d-flex my-auto">
+          <v-icon color="black" x-small>mdi-circle</v-icon>
+        </v-list-item-icon>
+        Participants must be above 16 years old.
       </v-list-item>
     </v-list>
   </div>

@@ -1,10 +1,10 @@
 <template>
   <div class="components__merchPoster center-all flex-column inner-section">
     <v-img
-      src="/images/seat_chart.jpg"
+      src="/images/seating-plan.jpg"
       :width="$vuetify.breakpoint.smAndDown ? '80%' : '800'"
       contain
-      class="d-flex mx-auto mb-4"
+      class="d-flex pa-0 mx-auto mb-4"
     />
     <p class="text-center text-subtitle-2">
       Tickets are categorized by seating area. <br />

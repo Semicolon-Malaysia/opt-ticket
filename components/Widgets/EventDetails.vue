@@ -3,7 +3,7 @@
     <sponsor-card v-if="$vuetify.breakpoint.smAndDown" />
     <p class="text-sm-h5 font-weight-bold">DATE</p>
     <p class="text-h6 text-sm-h4 font-weight-black mb-sm-2">
-      20 MARCH 2022 (SATURDAY)
+      20 MARCH 2022 (SUNDAY)
     </p>
     <p class="text-sm-h5 mb-12">5.00PM UNTIL 11.30PM</p>
 
